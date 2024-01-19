@@ -1,0 +1,77 @@
+/* SideBar.css */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.zen-img {
+  height: 40px;
+  width: 48px;
+  margin-left: 0px;
+}
+
+.item {
+  margin-left: 20px;
+}
+.sidebar {
+  width: 70px; /* Initial width */
+  height: 100vh; /* Set a height for the sidebar */
+  background-color: rgb(255, 251, 251);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  padding: 8px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgb(215, 215, 221);
+}
+
+.sidebar:hover {
+  width: 200px; /* Expanded width on hover */
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Modify the CSS for icons and their hover effect */
+.icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+  opacity: 0.7;
+  margin: 10px;
+  cursor: pointer;
+  color: rgb(38, 44, 46);
+  position: relative; /* Add position relative */
+}
+
+.sidebar-item:hover .icon {
+  color: rgb(65, 65, 230);
+  opacity: 1;
+}
+
+.item-text {
+  font-size: 14px;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar:hover .item-text {
+  display: inline-block; /* Display all item text on sidebar hover */
+  opacity: 1; /* Show all item text */
+  color: black;
+  cursor: pointer;
+}

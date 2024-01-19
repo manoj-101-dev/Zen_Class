@@ -1,0 +1,10 @@
+.certificate {
+  text-align: center;
+  margin-top: 100px;
+}
+
+@media only screen and (max-width: 935px) {
+  .certificate-container {
+    width: 935px;
+  }
+}

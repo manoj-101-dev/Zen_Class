@@ -1,0 +1,131 @@
+.calendar-header {
+  font-size: 34px;
+  margin-top: 25px;
+  margin-left: 295px;
+}
+
+.calendar-container {
+  width: 500px;
+  height: 550px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 40px;
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 40px;
+  margin-left: 120px;
+}
+
+/* Styles for the status section */
+.status-heading {
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 150px;
+}
+.class {
+  display: flex;
+  flex-wrap: wrap;
+}
+.status-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  margin: 5 10px;
+  margin-left: 25px;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.present-dot {
+  background-color: green;
+}
+
+.absent-dot {
+  background-color: red;
+}
+
+.holiday-dot {
+  background-color: rgb(124, 184, 225);
+}
+/* DashBoard.css or any applicable CSS file */
+
+.react-calendar {
+  max-width: 600px; /* Set a maximum width */
+  font-family: Arial, sans-serif;
+  border: none;
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+.react-calendar__month-view,
+.react-calendar__year-view {
+  max-width: 100%;
+}
+
+.react-calendar__tile {
+  width: calc(100% / 7); /* Adjust width of each day */
+}
+.chart-container {
+  position: relative;
+  bottom: 600px;
+  left: 770px;
+  width: 500px;
+  height: 370px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: #fff;
+  color: #333;
+}
+
+.chart-header {
+  margin-left: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 6rem;
+  margin: 9px;
+}
+.chart-header h5 {
+  margin: 7px;
+}
+.chart-item {
+  width: 500px;
+  height: 370px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 5px;
+  background-color: #fff;
+  color: #333;
+  margin-top: 50px;
+}
+.title {
+  position: relative;
+  bottom: 625px;
+  margin-left: 950px;
+}
+
+@media only screen and (max-width: 1285px) {
+  .dashboard-container {
+    width: 1285px;
+  }
+}

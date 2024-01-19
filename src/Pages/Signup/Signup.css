@@ -1,0 +1,123 @@
+/* login.css */
+
+/* General styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Login container */
+.login-container {
+  display: flex;
+  position: relative;
+  height: 100vh;
+}
+
+/* Form container */
+.form-container {
+  flex: 1; /* Take remaining space */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+.form-container label {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.form-container input {
+  width: calc(36% - 20px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.btn-login {
+  display: block;
+  width: 34%;
+  margin-top: 10px;
+  background-color: rgb(65, 65, 230);
+  color: white;
+  font-size: 20px;
+  border-color: whitesmoke;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+:hover.btn-login {
+  background-color: rgb(43, 56, 234);
+}
+.form-container input:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px #7169fe;
+}
+
+.Login {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+}
+.Login h6 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 17px;
+  margin-top: 3px;
+  margin-left: 10px;
+  color: blue;
+  cursor: pointer;
+}
+
+/* Background image container */
+.zenbg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.zen-image1 {
+  width: 500px;
+  height: 100%;
+  object-fit: cover;
+  margin-left: 190px;
+}
+
+/* Image container */
+.img-container {
+  height: 120px;
+  width: 100px;
+  padding: 10px;
+}
+
+.zen-image {
+  width: 130px;
+  height: 100px;
+  margin: 10px;
+}
+
+.error-message {
+  color: red;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.message {
+  position: absolute;
+  top: 480px;
+  left: 30%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+  color: #017881; /* Example text color */
+  font-size: 20px;
+  text-align: center; /* Center the text */
+}
