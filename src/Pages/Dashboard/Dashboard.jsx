@@ -12,7 +12,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import "./Dashboard.css"; // Import the CSS file
+import "./DashBoard.css"; // Import the CSS file
 import { useNavigate } from "react-router-dom";
 
 // Functional component definition for the 'Dashboard' component

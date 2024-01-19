@@ -39,7 +39,7 @@ const Login = () => {
         localStorage.setItem("authToken", responseData.token);
         setMessage(responseData.message);
         // Redirect upon successful login
-        navigate("/Home");
+        navigate("/class");
       } else if (response.status === 401) {
         setMessage(responseData.message);
       } else {
