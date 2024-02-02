@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import profile from "../../assets/profile.jpg";
 import { BsClock } from "react-icons/bs";
-import "./task.css";
+import "./Task.css";
 
 const Task = () => {
   const [showLogoutOption, setShowLogoutOption] = useState(false);
