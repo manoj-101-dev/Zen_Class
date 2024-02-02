@@ -13,6 +13,8 @@ const Queries = () => {
     queries,
     handleCreateQuery: createQuery,
     handleDeleteQuery,
+    loading,
+    error,
   } = useQueries();
 
   // Navigation hook for redirecting
@@ -309,29 +311,39 @@ const Queries = () => {
 
       {/* Displaying created queries in cards */}
       <div className="output-card-container">
-        {queries.map((query, index) => (
-          <div key={index} className="output-card-wrapper">
-            <Card className="output-card">
-              <Card.Body>
-                <Card.Title>
-                  <h3 style={{ color: "rgb(65, 65, 230)" }}>
-                    Query Title: {query.title}
-                  </h3>
-                </Card.Title>
-                <Card.Text>Category: {query.category}</Card.Text>
-                <Card.Text>Created: {query.createdDateTime}</Card.Text>
-              </Card.Body>
+        {/* Loading or error message */}
+        {loading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>{error}</p>
+        ) : queries.length > 0 ? (
+          // Mapping through the queries and rendering cards
+          queries.map((query, index) => (
+            <div key={index} className="output-card-wrapper">
+              <Card className="output-card">
+                <Card.Body>
+                  <Card.Title>
+                    <h3 style={{ color: "rgb(65, 65, 230)" }}>
+                      Query Title: {query.title}
+                    </h3>
+                  </Card.Title>
+                  <Card.Text>Category: {query.category}</Card.Text>
+                  <Card.Text>Created: {query.createdDateTime}</Card.Text>
+                </Card.Body>
 
-              {/* Button to delete the query */}
-              <Button
-                className="del-btn"
-                onClick={() => handleDeleteQuery(query._id)}
-              >
-                Delete
-              </Button>
-            </Card>
-          </div>
-        ))}
+                {/* Button to delete the query */}
+                <Button
+                  className="del-btn"
+                  onClick={() => handleDeleteQuery(query._id)}
+                >
+                  Delete
+                </Button>
+              </Card>
+            </div>
+          ))
+        ) : (
+          <p>No queries available.</p>
+        )}
       </div>
     </div>
   );
