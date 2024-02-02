@@ -6,6 +6,7 @@ import { MdDescription, MdAssignmentAdd, MdBallot } from "react-icons/md";
 import zen from "../../assets/zen.jpg";
 import "./SideBar.css"; // Importing the stylesheet
 import { Link } from "react-router-dom";
+import { BiTask } from "react-icons/bi";
 
 // Functional component definition for the Sidebar
 const SideBar = () => {
@@ -34,7 +35,12 @@ const SideBar = () => {
           <span className="item-text">DashBoard</span>
         </Link>
       </div>
-
+      <div className="sidebar-item">
+        <Link to="/task" className="sidebar-link">
+          <BiTask className="icon" />
+          <span className="item-text">Task</span>
+        </Link>
+      </div>
       {/* Sidebar item with a link to the "Queries" page */}
       <div className="sidebar-item">
         <Link to="/Queries" className="sidebar-link">

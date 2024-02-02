@@ -11,9 +11,16 @@ import Queries from "../Pages/Queries/Queries";
 import LeaveApplications from "../Pages/Leave/Leave";
 import Certificate from "../Pages/Certificate/Certificate";
 import Signup from "../Pages/Signup/Signup";
+import Task from "../Pages/Task/Task";
+import { useState } from "react";
 
 // Functional component definition for the layout
 const Layout = () => {
+  const [formSubmissions, setFormSubmissions] = useState([]);
+
+  const handleFormSubmit = (newSubmission) => {
+    setFormSubmissions([...formSubmissions, newSubmission]);
+  };
   // Accessing the current location using useLocation hook
   const location = useLocation();
 
@@ -28,11 +35,23 @@ const Layout = () => {
         {/* Defining routes using the Routes and Route components from react-router-dom */}
         <Routes>
           <Route exact path="/" element={<Login />} />
-          <Route path="/class" element={<Class />} />
+          <Route
+            path="/class"
+            element={
+              <Class
+                formSubmissions={formSubmissions}
+                onFormSubmit={handleFormSubmit}
+              />
+            }
+          />
           <Route path="/Signup" element={<Signup />} />
           <Route path="/DashBoard" element={<DashBoard />} />
           <Route path="/Queries" element={<Queries />} />
           <Route path="/Leave Applications" element={<LeaveApplications />} />
+          <Route
+            path="/task"
+            element={<Task formSubmissions={formSubmissions} />}
+          />
           <Route path="/Certificate" element={<Certificate />} />
         </Routes>
       </div>

@@ -1,0 +1,44 @@
+#task-card {
+  margin-left: 170px;
+  margin-top: 100px;
+  width: 700px;
+  background-color: #f0f8ff; /* Aliceblue */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-submission {
+  margin: 0 0 20px 0 !important;
+}
+
+.badge {
+  text-align: end;
+  font-size: 15px;
+  width: 50px;
+  height: 25px;
+  margin-top: -55px;
+}
+
+.task-content {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.date {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: -55px;
+}
+
+.task-data {
+  max-width: 260px;
+  margin: 5px;
+}
+
+.task {
+  max-height: 100%;
+}

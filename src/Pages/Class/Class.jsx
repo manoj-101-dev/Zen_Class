@@ -1,29 +1,43 @@
-// Importing necessary dependencies and assets
-import { useState } from "react";
-import profile from "../../assets/profile.jpg";
-import "./Class.css";
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import profile from "../../assets/profile.jpg";
+import { HiChevronDoubleDown, HiChevronDoubleUp } from "react-icons/hi";
+import { Button } from "react-bootstrap";
+import "./Class.css";
+import Activities from "../Activities/Activities";
 
-// Functional component definition for the 'Class' component
 const Class = () => {
-  // State for managing the display of logout option
-  const [showLogoutOption, setShowLogoutOption] = useState(false);
-
-  // Function to handle profile click and toggle the logout option display
-  const handleProfileClick = () => {
-    setShowLogoutOption(!showLogoutOption);
-  };
-
-  // Hook to navigate between pages
   const navigate = useNavigate();
 
-  // Function to handle logout and navigate to the home page
   const handleLogout = () => {
     navigate("/");
   };
 
+  const [formSubmissions, setFormSubmissions] = useState([]);
+  const [showLogoutOption, setShowLogoutOption] = useState(false);
+  const [showFullContent, setShowFullContent] = useState(false);
+
+  const toggleContent = () => {
+    setShowFullContent(!showFullContent);
+  };
+
+  const handleProfileClick = () => {
+    setShowLogoutOption(!showLogoutOption);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const newSubmission = {
+      taskNumber: formSubmissions.length + 1,
+      title: "JavaScript Day 1",
+      date: new Date().toLocaleDateString(),
+    };
+  };
+
   return (
-    <div className="class">
+    <div id="class">
       {/* Navbar section */}
       <div className="navbar">
         <h2>Class</h2>
@@ -66,7 +80,6 @@ const Class = () => {
             engine, <br />
             internals IP – MAC address – Ports & Evolution of HTTP, <br /> HTTP
             Methods <br />
-            How the Server looks at the URL <br /> Request & Response cycle
           </p>
           <h6>
             <b>Pre-Read:</b>
@@ -112,6 +125,17 @@ const Class = () => {
         <div className="circle">32</div>
         <div className="circle">33</div>
       </div>
+
+      {/* Activities section */}
+      <Activities
+        showFullContent={showFullContent}
+        handleFormSubmit={handleFormSubmit}
+        toggleContent={toggleContent}
+      />
+
+      <Button variant="link" id="arrow-button" onClick={toggleContent}>
+        {showFullContent ? <HiChevronDoubleDown /> : <HiChevronDoubleUp />}
+      </Button>
     </div>
   );
 };
