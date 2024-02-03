@@ -1,17 +1,25 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 // frontend/src/context/QueriesContext.js
 import { createContext, useContext, useEffect, useState } from "react";
 
 const QueriesContext = createContext();
+const initialState = {
+  authToken: localStorage.getItem("authToken"),
+  queries: [],
+  loading: true,
+  error: null,
+};
 
 export const QueriesProvider = ({ children }) => {
   const [queries, setQueries] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [state, setState] = useState(initialState);
 
   const fetchQueries = async () => {
     try {
-      const authToken = localStorage.getItem("authToken");
+      const authToken = state.authToken;
 
       const response = await fetch(
         "https://zen-class-lxyk.onrender.com/queries",
