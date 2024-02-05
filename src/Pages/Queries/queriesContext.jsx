@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
@@ -36,7 +37,9 @@ export const QueriesProvider = ({ children }) => {
         const data = await response.json();
         setQueries(data);
       } else {
-        console.error("Failed to fetch queries");
+        console.error(
+          `Failed to fetch queries. Status: ${response.status}, ${response.statusText}`
+        );
       }
     } catch (error) {
       console.error("Error fetching queries:", error);
