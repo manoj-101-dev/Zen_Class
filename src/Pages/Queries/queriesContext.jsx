@@ -20,14 +20,12 @@ export const QueriesProvider = ({ children }) => {
 
   const fetchQueries = async () => {
     try {
-      const authToken = state.authToken;
-
       const response = await fetch(
         "https://zen-class-lxyk.onrender.com/queries",
         {
           method: "GET",
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            Authorization: `Bearer ${state.authToken}`,
           },
           credentials: "include",
         }
@@ -62,7 +60,7 @@ export const QueriesProvider = ({ children }) => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${authToken}`,
+            Authorization: `Bearer ${state.authToken}`,
           },
           body: JSON.stringify({ ...values, createdDateTime }),
           credentials: "include",
@@ -90,7 +88,7 @@ export const QueriesProvider = ({ children }) => {
         {
           method: "DELETE",
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            Authorization: `Bearer ${state.authToken}`,
           },
           credentials: "include",
         }
