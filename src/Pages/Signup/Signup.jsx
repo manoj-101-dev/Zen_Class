@@ -34,7 +34,7 @@ const Signup = () => {
         const data = await response.json();
         setMessage(data.message);
         // Redirect upon successful signup
-        navigate("/Home");
+        navigate("/");
       } else if (response.status === 400) {
         // parse the error data and set the error message
         const data = await response.json();
